@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental-Care</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="Images/logo.png" alt="Mental-Care">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="Resources/meditate.html">Meditate</a></li>
+                <li><a href="Resources/bookService.html">Book Service</a></li>
+                <li><a href="Resources/chatAI.html">Chat AI</a></li>
+                <li><a href="Resources/blogsAndStories.html">Blogs & Stories</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="Images/sky-video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="hero-box">
+            <div class="hero-content1">
+                <h1>Because You Deserve to Feel Better</h1>
+                <p>A compassionate approach to mental health and self-care.</p>
+                <a href="#" class="cta-button">Explore</a>
+            </div>
+            <div class="hero-content2">
+                <img src="Images/wellness_2.gif" alt="Mental Health" class="mental-gif">
+                <div>
+                    <h2>Mark Your Emotions</h2>
+                    <p>😊 😢 😠 😌</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meditation-section">
+        <!-- Auto-Changing Quote -->
+        <div class="quote-section">
+            <p id="quote" class="quote-text">Meditation is the key to a peaceful mind.</p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'music')">Meditation Music</button>
+            <button class="tab-link" onclick="openTab(event, 'videos')">Meditation Videos</button>
+        </div>
+
+        <!-- Meditation Music Section -->
+        <div id="music" class="tab-content active-content">
+            <h3>Relaxing Meditation Music</h3>
+            <p class="tab-description">Listen to calming music for deep relaxation and mindfulness.</p>
+
+            <div class="media-row">
+                <div class="audio-container">
+                    <audio controls>
+                        <source src="Media/Music/Guzheng.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p>.............Guzheng.............</p>
+                </div>
+
+                <div class="audio-container">
+                    <audio controls>
+                        <source src="Media/Music/Earth Resonance.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p>.......Earth Resonance.......</p>
+                </div>
+            </div>
+
+            <a href="music-page.html" class="cta-button">More Music</a>
+        </div>
+
+        <!-- Meditation Videos Section -->
+        <div id="videos" class="tab-content">
+            <h3>Guided Meditation Videos</h3>
+            <p class="tab-description">Watch guided sessions to improve focus and mindfulness.</p>
+
+            <div class="media-row">
+                <div class="video-container">
+                    <video controls>
+                        <source src="media/meditation-video1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Morning Mindfulness</p>
+                </div>
+
+                <div class="video-container">
+                    <video controls>
+                        <source src="media/meditation-video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Evening Relaxation</p>
+                </div>
+            </div>
+
+            <a href="videos-page.html" class="cta-button">More Videos</a>
+        </div>
+    </section>
+
+
+<script src="js/mediTabLinks.js"></script>
+</body>
+</html>

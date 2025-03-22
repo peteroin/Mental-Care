@@ -1,0 +1,75 @@
+/* Reset & General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #333;
+    background-color: #f4f8f2;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #ff6b81;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: #ff6b81;
+}
