@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book-Service-Mental-Care</title>
+    <title>Book a Session - Mental-Care</title>
     <link rel="stylesheet" href="bookService.css">
 </head>
 <body>
-    
     <header>
         <nav>
             <div class="logo">
                 <img src="Images/logo.png" alt="Mental-Care">
             </div>
-    
-            <!-- Hamburger Menu -->
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    
+            <!-- <div class="menu-toggle" onclick="toggleMenu()">☰</div> -->
             <ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="meditate.html">Meditate</a></li>
@@ -26,7 +22,82 @@
             </ul>
         </nav>
     </header>
-    
-    <script src="../js/navigationHamburger.js"></script>
+
+    <main>
+        <h2 class="page-title">Book a Session with a Therapist</h2>
+        <section class="therapist-list">
+            <div class="therapist-card">
+                <img src="../Images/Doctor.jpg" alt="Dr. Ashutosh">
+                <div class="therapist-info">
+                    <h3>Dr. Ashutosh</h3>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p>Clinical Psychologist (PhD), 11-15 years experience</p>
+                    <p><b>📍 Location:</b> Dwarka, Delhi</p>
+                    <p class="price">₹1500 consultation fee</p>
+                    <button class="book-btn">Book Session</button>
+                </div>
+            </div>
+
+            <div class="therapist-card">
+                <img src="../Images/Doctor.jpg" alt="Dr. Raunak">
+                <div class="therapist-info">
+                    <h3>Dr. Raunak</h3>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                    <p>Psychiatrist, 8+ years experience</p>
+                    <p><b>📍 Location:</b> South Delhi</p>
+                    <p class="price">₹1800 consultation fee</p>
+                    <button class="book-btn">Book Session</button>
+                </div>
+            </div>
+
+            <div class="therapist-card">
+                <img src="../Images/Doctor.jpg" alt="Dr. Utsav">
+                <div class="therapist-info">
+                    <h3>Dr. Utsav</h3>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star-half">⭐</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p>Counseling Psychologist, 6+ years experience</p>
+                    <p><b>📍 Location:</b> Kolkata</p>
+                    <p class="price">₹1200 consultation fee</p>
+                    <button class="book-btn">Book Session</button>
+                </div>
+            </div>
+
+            <div class="therapist-card">
+                <img src="../Images/Doctor.jpg" alt="Dr. Rastogi">
+                <div class="therapist-info">
+                    <h3>Dr. Rastogi</h3>
+                    <div class="rating">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                    <p>Child Psychologist, 10+ years experience</p>
+                    <p><b>📍 Location:</b> Noida</p>
+                    <p class="price">₹1400 consultation fee</p>
+                    <button class="book-btn">Book Session</button>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
