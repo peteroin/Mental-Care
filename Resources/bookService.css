@@ -1,6 +1,7 @@
 /* General Page Styling */
 body {
     font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
