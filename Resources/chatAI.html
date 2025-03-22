@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat-AI-Mental-Care</title>
     <link rel="stylesheet" href="chatAI.css">
+    <link rel="icon" href="../Images/logo.ico" type="image/x-icon">
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        video { border: 2px solid black; width: 60%; margin-top: 20px; }
+        canvas { position: absolute; top: 0; left: 0; }
+        p { font-size: 20px; font-weight: bold; margin-top: 20px; }
+    </style>
+
 </head>
 <body>
     
     <header>
         <nav>
             <div class="logo">
-                <img src="Images/logo.png" alt="Mental-Care">
+                <img src="../Images/logo.png" alt="Mental-Care">
             </div>
     
             <!-- Hamburger Menu -->
@@ -27,6 +37,14 @@
         </nav>
     </header>
 
+    <h1>Real-Time Emotion Detection</h1>
+    <video id="video" autoplay></video>
+    <p id="emotion-result">Loading...</p>
+
+
+
+
+    <script src="../js/emotion.js"></script>
     <script src="../js/navigationHamburger.js"></script>
 </body>
 </html>

@@ -7,6 +7,8 @@
 }
 
 body {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    font-family: 'Arial', sans-serif;
     color: #333;
     background-color: #f4f8f2;
     scroll-behavior: smooth;
@@ -208,6 +210,201 @@ nav {
     margin-bottom: 1rem;
 }
 
+/* Book Service Section */
+#book-service {
+    text-align: center;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    padding: 60px 20px;
+    border-radius: 10px;
+}
+
+.book-service h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.book-service p {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: #333;
+}
+.service-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.book-button, .cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.book-button:hover, .cta-button:hover {
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .service-container, .blog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card, .blog-card {
+        width: 90%;
+    }
+}
+
+.common__sub {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.common__sub h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.common__sub p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.common__sub.aos-animate h2,
+.common__sub.aos-animate p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 📌 Blogs & Stories Section */
+.testimonial__v1wrap {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+    border-radius: 10px;
+}
+
+.testimonial__v1wrap h2, .testimonial__v1wrap p {
+    color: white;
+}
+
+/* 📌 Blog Cards */
+.blog-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: scale(1.05);
+}
+
+.blog-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.blog-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* 📌 Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    transform: scale(1.05);
+}
+
+/* 📌 Responsive Design */
+@media screen and (max-width: 768px) {
+    .blog-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card {
+        width: 80%;
+    }
+}
+
+
+
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
     .hero-box {
@@ -260,7 +457,7 @@ nav {
 
 
 .quote-section {
-    background: linear-gradient(135deg, #87CEEB, #FFC0CB); /* Sky Blue to Soft Pink */
+    background: linear-gradient(135deg, #fbc2eb, #a18cd1);
     padding: 4rem 2rem;
     text-align: center;
     border-radius: 10px;
@@ -280,6 +477,10 @@ nav {
     margin: 0 auto;
 }
 
+.meditation-section {
+    
+    background: linear-gradient(135deg, #fbc2eb, #a18cd1);
+}
 
 /* Tabs Styling */
 .tabs {
