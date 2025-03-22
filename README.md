@@ -1,8 +1,8 @@
-#Mental Care Website
+## Mental Care Website
 Overview
 The Mental Care Website is a comprehensive platform designed to provide mental health support, resources, and services. It offers interactive features such as an AI-powered chatbot, meditation guides, mental health blogs, and professional consultation booking. The platform is built using HTML, CSS, and JavaScript with TensorFlow.js and Botpress integrations for AI functionalities.
 
-Features
+# Features
 1. Home Page
 Engaging UI with a hero section featuring a background video.
 
