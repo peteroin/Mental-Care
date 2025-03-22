@@ -32,10 +32,12 @@ nav {
     padding: 0 2rem;
 }
 
+/* Logo */
 .logo img {
     height: 50px;
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -73,6 +75,44 @@ nav {
 .nav-links a:hover {
     color: #ff6b81;
 }
+
+/* Hamburger Menu (Initially Hidden) */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Show menu when active */
+    .nav-links.active {
+        display: flex;
+    }
+}
+
 
 /* Hero Section */
 .hero {
@@ -156,21 +196,68 @@ nav {
 .hero-content2 {
     width: 45%;
     text-align: center;
-    transform: translate(60px, -70px); /* Move left (-X) and up (-Y) */
     position: relative;
+    transform: translateX(-30px); /* Slight left shift */
 }
 
+/* GIF Styling */
 .mental-gif {
-    height: 400px;
+    height: 350px;
     width: auto;
     border-radius: 10%;
     margin-bottom: 1rem;
-
 }
 
-.hero-content2 h2 {
-    font-size: 3rem;
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .hero-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content1, .hero-content2 {
+        width: 100%;
+    }
+
+    .hero-content1 {
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .hero-content2 {
+        transform: none; /* Reset the transformation */
+    }
 }
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .hero-content1 h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content1 p {
+        font-size: 1rem;
+    }
+
+    .mental-gif {
+        height: 250px; /* Smaller size for mobile */
+    }
+
+    .hero-box {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-content2 {
+        transform: none;
+        text-align: center;
+    }
+}
+
 
 .quote-section {
     background: linear-gradient(135deg, #87CEEB, #FFC0CB); /* Sky Blue to Soft Pink */
