@@ -85,6 +85,14 @@ nav {
     color: #333;
 }
 
+video {
+    width: 60%;
+    border: 2px solid black;
+    display: block;
+    margin: 20px auto;
+}
+
+
 /* Responsive Navigation */
 @media screen and (max-width: 768px) {
     .nav-links {
