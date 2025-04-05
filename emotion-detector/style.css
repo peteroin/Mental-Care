@@ -1,0 +1,240 @@
+/* Reset + Font */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  body {
+    color: #333;
+    background-color: #e6e0ef; 
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  section {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  header {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #ff6b81;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: #ff6b81;
+}
+  
+  /* Main Container */
+  .container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    width: 95%;
+    max-width: 650px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.8s ease-in-out;
+    text-align: center;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  .tab-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+  }
+  
+  .tab-button.active {
+    background: #38f9d7;
+    color: #111;
+    border-color: #43e97b;
+    transform: scale(1.05);
+    font-weight: bold;
+  }
+  
+  .tab-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    display: none;
+    transition: all 0.5s ease;
+  }
+  
+  .tab-content.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  /* Webcam & File Input */
+  video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  input[type="file"] {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Buttons */
+  .glow-btn {
+    margin-top: 20px;
+    padding: 14px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(56, 249, 215, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .glow-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(56, 249, 215, 1);
+  }
+  
+  /* Result Text */
+  .result-text {
+    margin-top: 25px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .result-text.show {
+    opacity: 1;
+  }
+  
+  /* Animations */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .title {
+      font-size: 28px;
+    }
+  
+    .tab-button {
+      padding: 10px 14px;
+      font-size: 14px;
+    }
+  
+    .glow-btn {
+      font-size: 14px;
+      padding: 10px 24px;
+    }
+  
+    .result-text {
+      font-size: 20px;
+    }
+  }
+  

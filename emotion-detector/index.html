@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Emotion Detector</title>
+  <link rel="icon" href="../Images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <img src="../Images/logo.png" alt="Mental-Care">
+        </div>
+
+        <!-- Hamburger Menu -->
+        <!-- <div class="menu-toggle" onclick="toggleMenu()">☰</div> -->
+
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../Resources/meditate.html">Meditate</a></li>
+            <li><a href="../Resources/bookService.html">Book Service</a></li>
+            <li><a href="index.html">Emotion Detector</a></li>
+            <li><a href="../Resources/blogsAndStories.html">Blogs & Stories</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="container slide-in">
+      <h1 class="title pulse">😃 Emotion Detector</h1>
+  
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-button active" data-tab="webcamTab">📷 Webcam</button>
+        <button class="tab-button" data-tab="uploadTab">🖼️ Upload</button>
+      </div>
+  
+      <!-- Webcam Tab -->
+      <div class="tab-content show" id="webcamTab">
+        <video id="webcam" autoplay playsinline></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button id="captureBtn" class="glow-btn">🎬 Capture Emotion</button>
+      </div>
+  
+      <!-- Upload Tab -->
+      <div class="tab-content" id="uploadTab">
+        <input type="file" id="fileInput" accept="image/*" />
+        <button id="uploadBtn" class="glow-btn">📤 Upload & Detect</button>
+      </div>
+  
+      <!-- Result -->
+      <div id="result" class="result-text bounce-in"></div>
+    </div>
+  
+    <script>
+      const webcam = document.getElementById("webcam");
+      const canvas = document.getElementById("canvas");
+      const captureBtn = document.getElementById("captureBtn");
+      const fileInput = document.getElementById("fileInput");
+      const uploadBtn = document.getElementById("uploadBtn");
+      const resultDiv = document.getElementById("result");
+  
+      // Webcam
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => webcam.srcObject = stream)
+        .catch(() => alert("Camera access is required!"));
+  
+      captureBtn.addEventListener("click", () => {
+        canvas.width = webcam.videoWidth;
+        canvas.height = webcam.videoHeight;
+        canvas.getContext("2d").drawImage(webcam, 0, 0);
+        canvas.toBlob(blob => {
+          const formData = new FormData();
+          formData.append("image", blob, "capture.jpg");
+          sendToServer(formData);
+        }, "image/jpeg");
+      });
+  
+      uploadBtn.addEventListener("click", () => {
+        const file = fileInput.files[0];
+        if (!file) return alert("Please select an image!");
+        const formData = new FormData();
+        formData.append("image", file);
+        sendToServer(formData);
+      });
+  
+      function sendToServer(formData) {
+        resultDiv.textContent = "🔍 Analyzing...";
+        resultDiv.classList.remove("show");
+        fetch("http://127.0.0.1:5000/predict", {
+          method: "POST",
+          body: formData,
+        })
+          .then(res => res.json())
+          .then(data => {
+            resultDiv.textContent = ` Detected Emotion: ${data.emotion}`;
+            resultDiv.classList.add("show");
+          })
+          .catch(() => {
+            resultDiv.textContent = "❌ Server error.";
+            resultDiv.classList.add("show");
+          });
+      }
+  
+      // Tab switching
+      document.querySelectorAll(".tab-button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".tab-button").forEach(b => b.classList.remove("active"));
+          document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("show"));
+          btn.classList.add("active");
+          document.getElementById(btn.dataset.tab).classList.add("show");
+        });
+      });
+    </script>
+  </section>
+  
+</body>
+</html>
